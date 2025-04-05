@@ -4,6 +4,10 @@
  Examples include "racecar", "madam", and "12321".
 */
 
+
+//--------------------------------------------
+// Reversing a string to check if it is a palindrome
+
 function isPalindrome(str){
     str = str.toLowerCase();
 
@@ -32,3 +36,25 @@ function isPalindromeTwoPointer(str) {
     return true;
 }
 console.log(isPalindromeTwoPointer('1-racecar-1')); 
+
+//--------------------------------------------
+// Recursive approach to check if a string is a palindrome
+
+function isPalindrome(str) {
+    // Convert the string to lowercase and remove non-alphanumeric characters
+    str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    // Base case: if the string has 1 or no characters, it's a palindrome
+    if (str.length <= 1) return true;
+
+    // Check if the first and last characters are the same
+    if (str[0] !== str[str.length - 1]) return false;
+
+    // Recursively check the substring excluding the first and last characters
+    return isPalindrome(str.slice(1, -1));
+}
+  
+// Test cases
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello"));   // false
+console.log(isPalindrome("A1b2c2b1a")); // true
