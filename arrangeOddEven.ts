@@ -38,3 +38,15 @@ const arr = [3, 8, 5, 2, 7, 4, 1, 6];
 console.log('Before:', arr);
 arrangeOddEven(arr);
 console.log('After:', arr);
+
+let givenarr = [1,1,2,3,4,5,6];
+
+function rearrangeOddEven ( arr){
+    
+    let odds = givenarr.filter((x)=> x%2 !==0 );
+    let evens = givenarr.filter((x)=> x%2 ===0 );
+    
+   return  evens.concat(odds);
+}
+
+console.log(rearrangeOddEven(givenarr));
