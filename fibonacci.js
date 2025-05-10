@@ -4,6 +4,47 @@ the sum of the two preceding ones, usually starting with 0 and 1.
 
 */
 
+/* Genrate a fibonacci series upto n */
+
+let n =10 ;
+let generateFibonacciUptoN = function (n){
+    fib = [0,1];
+    for (let i = 2 ; i < n ; ++i ){
+        fib[i] = fib[i-1] + fib[i-1];
+    }
+    return fib.slice(0 ,n );
+}
+console.log(generateFibonacciUptoN(n))
+
+//fib until nth
+let n =8 ;
+let fibuntil = function (){
+    let fib = [0,1];
+    for(let i=2 ; i < n ; i++){
+        fib[i] = fib[i-1] + fib[i-2];
+        
+    }return fib.slice(0 , n );
+}
+console.log(fibuntil(n))
+// fib of nth
+
+function nthFib(n){
+    if(n===0) return 0;
+    if(n===1) return 1;
+    let prev = 0;
+    let curr =1;
+    let next ;
+    for(let i =2 ; i <=n ; i++){
+        next = prev + curr ;
+        prev = curr ;
+        curr = next ;
+        
+        
+    }return curr ;
+}
+console.log(nthFib(n-1))
+
+
 function isPerfectSquare(number) {
     const sqrt = Math.sqrt(number);
     return Math.floor(sqrt) === sqrt;
@@ -20,7 +61,7 @@ function isFibonacci(number) {
     }
 }
 
-isFibonacci(0);
+// isFibonacci(0);
 
 
 //fibonacciGenerator
@@ -36,7 +77,7 @@ function fibonacciGenerator(limit) {
     return series;
 }
 
-console.log(fibonacciGenerator(5));
+// console.log(fibonacciGenerator(5));
 
 //with case 0 and negative numbers
 function fibonacciGenerator(limit) {
@@ -65,5 +106,5 @@ function fibonacciGenerator(limit) {
     return series;
 }
 
-const fibSeries = fibonacciGenerator(-500);
-console.log(fibSeries);
+// const fibSeries = fibonacciGenerator(-500);
+// console.log(fibSeries);
